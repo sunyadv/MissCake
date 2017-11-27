@@ -1,0 +1,132 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>MISSCAKE-私人订制!!!</title>  
+		<link rel="shortcut icon" href="favicon.ico" >
+		<link rel="stylesheet" type="text/css" href="http://static.21cake.com/min/?f=themes/site/css/common.css,themes/site/css/header.css,themes/site/css/footer.css&v=20170905">    
+
+    
+    
+         <link rel="stylesheet" type="text/css" href="http://static.21cake.com/min/?f=/themes/site/css/home.css&v=20170905">    
+
+    
+     <script type="text/javascript" src="http://static.21cake.com/min/?f=themes/site/js/jquery.js&v=20170905"></script>   
+	</head>
+	<body>
+		<header>
+			<div class="header-box">
+				<div class="header">
+					<div class="header-nav">
+						<a class="header-logo" href="#">
+						
+						<img src="img/misscake.jpg" title="misscake logo" />        
+						</a>
+						<ul class="nav-box">
+							<li><a href="#" >首页</a></li>
+							<li><a href="#" target="_self">蛋糕</a></li>
+							<li><a href="#" target="_self">小切块</a></li>
+							<li><a href="#" target="_self">全国配送</a></li>
+							<li><a href="#" target="_self">企业专区</a></li>
+						</ul>
+						<div class="right-city-user">
+							<a class="header-app app-download" data-id='app-list'>APP下载</a>
+							<div class="current-city" data-id='current-city'>上海<i></i></div>
+							<span class="not-login">
+								<a href="denglu.html">登录</a>
+								<a href="zhuce.html">注册</a>
+							</span>
+							<a href="/member.html" class="header-user" data-id='header-user'>
+							
+							<img src="http://static.21cake.com//themes/site/img/user-img.png" alt="21cake user icon" />            
+							<!-- <img src="/themes/site/img/user-img.png" alt=""> -->
+							</a>
+							<a href="/cart.do" class="header-cart" id="cart-count-icon">
+								<i></i>
+							</a>
+
+							<dl class="app-list  header-select" id="app-list">
+							<dt>
+							
+							<img src="http://static.21cake.com//themes/site/img/footer-erweima.png" alt="下载APP" />            
+							</dt>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 轮播图 -->
+				<div class="slide" id="slider">
+				</div>
+				<script>
+					var sliderHeight = $(window).height()-80-140;
+					if(sliderHeight <= 480){
+						sliderHeight= 480;
+					}
+					$('.slide').css('height',sliderHeight)
+				</script>
+		</header>
+		<footer>
+				 <div class="footer">
+			<img class="footer-logo" src="img/misscake.jpg" height="36" width="96" alt="">
+			<div class="footer-nav">
+				<a href="/doc-about-55.html">联系我们</a>
+				<span>|</span>
+				<a href="/doc-distribution-40.html">订购帮助</a>
+				<span>|</span>
+				<a href="/doc-about-56.html">企业合作</a>
+				<span>|</span>
+				<a href="/doc-about-115.html">生产经营资质</a>
+				<span>|</span>
+				<a href="/article-company.html">公告专区</a>
+			</div>
+			<div class="footer-icon">
+				<a href="http://weibo.com" target="_blank">
+					<img src="http://static.21cake.com/themes/site/img/footericon-01.png">
+				</a>
+				<a class="footer-weixin">
+					<div class="footer-erweima footer-weixin-erweima">
+					</div>
+					<img src="http://static.21cake.com/themes/site/img/footericon-02.png">
+				</a>
+				<a class="footer-app">
+					<div class="footer-erweima footer-app-erweima">
+					</div>
+					<!-- <img src="http://static.21cake.com/themes/site/img/footericon-03.png"> -->
+					APP
+				</a>
+			</div>
+			
+			<div class="footer-text">
+				<span>订购专线：400 400 4040（服务时间 08:00–22:00）</span>
+				<span>客服电话：000-00110011（全国） | *******@qq.com（邮箱）</span>
+				<span>北京/杭州/广州：提前5小时预订；上海：提前6-8小时预订；天津/苏州/无锡/深圳：提前8小时预订（当日22点以后订单，于次日8点开始审核） </span>
+				<span>当日蛋糕配送截止下单时间：北京：16:30；上海：16:30；杭州/广州：13:50；天津：10:30；苏州/无锡/深圳：11:00</span>
+				<span>网站注册公司名称: *******食品有限公司 地址: 南京市**街5号院3号楼 </span>
+			</div>
+			<div class="footer-copyright">
+				<span>Copyright© 蛋糕官网商城 2007-2017, 版权所有 京ICP备********号-1</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".footer-weixin").hover(function(){
+				$('.footer-weixin-erweima').show().find('img').animate({top:0}, 200);
+			},function(){
+				$('.footer-weixin-erweima').hide().find('img').css('top','100%');
+			});
+			 $(".footer-app").hover(function(){
+				$('.footer-app-erweima').show().find('img').animate({top:0}, 200);
+			},function(){
+				$('.footer-app-erweima').hide().find('img').css('top','100%');
+			})
+			$(document).ready(function(){
+				$('div[id*="xunlei_com"]').remove();
+				$('#jcps').remove();
+			});
+			 
+		</script>
+		</footer>
+	</body>
+</html>
+

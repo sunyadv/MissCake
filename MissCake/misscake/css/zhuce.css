@@ -1,0 +1,54 @@
+	body{
+		background-image:url(img/background.jpg);
+	}
+	#title1{
+		color:#fff····;
+		font-size:25px;
+	}
+	section{
+		height:1000px;
+		background-size:100% 100%;
+		background-image:url(img/background.jpg);
+	}
+	#list{
+		width:400px;
+		margin:auto 60%;
+		position:absolute;
+	}
+	#list1{
+		background-color:rgba(0,0,0,0.2);
+		border:1px solid rgba(3,3,3,0.2);
+		position:relative;
+		top:300px;
+	}
+	#uname,#upwd,#phone{
+		width:100%;
+		height:30px;
+		outline:none;
+		padding:auto;
+		padding:border-box;
+		border:none;
+	}
+	#title2 ul{
+		width:400px;
+        list-style:none;
+        margin:50px auto;
+	}
+	#title2 ul li{
+		padding:12px;
+            position:relative;
+	}
+	.reading-protocol label{
+		 width:90px;
+            display:inline-block;
+            float:left;
+            line-height:30px;
+	}
+	.reading-protocol p{
+		text-align:right;
+	}
+	.zhuce{
+		width:100%;
+		height:30px;
+
+	}

@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>MISSCAKE-私人订制!!!</title>
+  	 <link rel="shortcut icon" href="favicon.ico" >
+   <link rel="stylesheet" href="css/hf.css">
+    <script src="js/common.js"></script>
+  <style>
+	body{
+		background-image:url(img/background.jpg);
+	}
+
+	section{
+		height:1000px;
+		background-size:100% 100%;
+		background-image:url(img/background.jpg);
+	}
+	#list{
+		width:400px;
+		margin:auto 60%;
+		position:absolute;
+	}
+	#list1{
+		background-color:rgba(0,0,0,0.2);
+		border:1px solid rgba(3,3,3,0.2);
+		position:relative;
+		top:180px;
+		border-radius:5px;
+	}
+	#title1{
+		position:relative;
+		top:30px;
+		font-size:24px;
+	}
+	#uname,#upwd,#cpwd,#phone{
+		width:100%;
+		height:30px;
+		outline:none;
+		padding:auto;
+		border:none;
+		border-radius:2px;
+	}
+	#title2 ul{
+		width:400px;
+        list-style:none;
+        margin:50px auto;
+		
+	}
+	#title2 ul li{
+		padding:12px;
+        position:relative;
+
+	}
+	#title2 ul li span{
+		font-size:18px;
+
+	}
+	
+	#uname[placeholder],#upwd[placeholder],#cpwd[placeholder],#phone[placeholder]{
+		padding-left:3px;
+	}
+	.reading-protocol label{
+		 width:90px;
+            display:inline-block;
+            float:left;
+            line-height:30px;
+	}
+	.reading-protocol p{
+		text-align:right;
+		 position:relative;
+		 top:8px;
+	}
+	.zhuce{
+		width:100%;
+		height:40px;
+		border-radius:12px;
+		font-size:18px;
+	}
+	li.err-text{
+		position:static;
+		height:22px;
+	}
+	li.err-text span{
+		line-height:22px;
+		color:#FF714D;
+		font-size:15px;
+	}
+  </style>
+
+  
+ </head>
+ <body>
+ <!--导航栏-->
+	<div class="header-box">
+<div class="header">
+    <div class="header-nav">
+        <a class="header-logo" href="http://101.132.97.61/MissCake/misscake/homepage2.0.html">
+			<img src="img/head.jpg">        
+        </a>
+        <ul class="nav-box">
+				<li><a href="http://101.132.97.61/MissCake/misscake/homepage2.0.html" >首页</a></li>
+                <li><a href="http://101.132.97.61/MissCake/misscake/cake.html" target="_self">蛋糕</a></li>
+                <li><a href="http://101.132.97.61/MissCake/misscake/piece.html" target="_self">小切块</a></li>
+                <li><a href="" target="_self">全国配送</a></li>
+                <li><a href="" target="_self">企业专区</a></li>
+        </ul>
+        <div class="right-city-user">
+
+            <div class="current-city" data-id='current-city'>上海
+						<ul class="current-city-list  header-select" id="current-city">
+                            <li>上海</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                            <li>杭州</li>
+                            <li>无锡</li>
+                            <li>苏州</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                        </ul>
+			</div>
+			
+            <span class="not-login">
+				<a href="denglu.html">登录</a>/<a href="zhuce.html">注册</a>
+			</span>
+            <a href="/member.html" class="header-user" data-id='header-user'>
+			          
+            </a>
+            <a href="#" class="header-cart" id="cart-count-icon">
+				<img src="img/user_img.png">  
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+	</header>
+<!--主体-->
+	<section>  
+		<div id="list">
+            <div id="list1">
+                <div id="title1">
+                    <h2 align="center">用户注册</h2>
+                </div>
+
+                <form action="zhuce.php" method="post" enctype="multipart/form-data">
+                    <div id="title2">
+                        <ul>
+							<li>
+								<span>用户名：</span>
+                                <input type="text" id="uname" name="uname" placeholder="输入用户名" onblur="yanzhen1()"><br>
+                            </li>
+
+							<li>
+								<span>密码：</span>
+                                <input type="password" id="upwd" name="upwd" placeholder="请输入8～20字符，需同时包含英文和数字" onblur="yanzhen2()"><br>
+                            </li>
+							<li>
+								<span>确认密码：</span>
+                                <input type="password" id="cpwd" name="cpwd" placeholder="确认密码" onblur="check_pwd()"><br>
+                            </li>
+                            <li>
+								<span>手机号：</span>
+                                <input type="phone" id="phone" name="phone" placeholder="输入手机号码"><br>
+                            </li>
+                            
+							<li class="err-text"><span id="show_uname"></span></li>
+							
+							<li><input class="zhuce" type="submit" value="注册"></li>
+							<div class="reading-protocol">
+								<label><input type="checkbox" name="agree" checked>&nbsp;已阅读并同意</label>
+								<p><a href="http://www.21cake.com/article-agreement-36.html">会员协议</a>和
+								<a href="http://www.21cake.com/article-policy-35.html">隐私保护政策</a></p>
+							</div>
+                        </ul>
+                    </div>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+	</section>
+
+<!--底部-->
+	<div class="footer">
+		<img class="footer-logo" src="img/head.jpg" height="66" width="96" alt="">
+		<div class="footer-nav">
+			<a href="/doc-about-55.html">联系我们</a>
+			<span>|</span>
+			<a href="/doc-distribution-40.html">订购帮助</a>
+			<span>|</span>
+			<a href="/doc-about-56.html">企业合作</a>
+			<span>|</span>
+			<a href="/doc-about-115.html">生产经营资质</a>
+			<span>|</span>
+			<a href="/article-company.html">公告专区</a>
+		</div>
+		<div class="footer-icon">
+			<a href="http://weibo.com/5711471027" target="_blank">
+				<img src="img/footericon-01.png">
+			</a>
+			<a class="footer-weixin">
+				<div class="footer-erweima footer-weixin-erweima">
+					<img src="img/erweima.jpg">
+				</div>
+				<img src="img/footericon-02.png">
+			</a>
+			<a class="footer-app">
+				<div class="footer-erweima footer-app-erweima">
+					<img src="img/erweima.jpg">
+				</div>
+				APP
+			</a>
+		</div>
+		
+		<div class="footer-text">
+			<span>订购专线：400 *** ****（服务时间 08:00–22:00）</span>
+			<span>客服电话：***-********（全国） | 976575821@qq.com（邮箱）</span>
+			<span>杭州/广州：提前5小时预订；北京/上海：提前6-8小时预订；天津/苏州/无锡/深圳：提前8小时预订（当日22点以后订单，于次日8点开始审核） </span>
+			<span>当日蛋糕配送截止下单时间：北京：16:30；上海：16:30；杭州/广州：13:50；天津：10:30；苏州/无锡/深圳：11:00</span>
+			<span>网站注册公司名称: 南京*******有限公司 地址: 南京市玄武区苏苑大厦达内科技 </span>
+		</div>
+		<div class="footer-copyright">
+			<span>Copyright© MissCake蛋糕官网 2007-2017, 版权所有 京ICP备********号-1</span>
+		</div>
+		</div>
+	<script>
+		function yanzhen1(){
+			var xhr = createXhr();
+			xhr.open("get","yanzhen.php?uname="+$("uname").value,true);
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					var resText = xhr.responseText;
+					$("show_uname").innerHTML = resText;
+						if(resText == "0"){
+							$("show_uname").innerHTML = "用户名可以使用！";
+						}else{
+							$("show_uname").innerHTML = "用户名已经存在！";
+						}
+				}
+			}
+			xhr.send(null);
+		}
+		function yanzhen2(){
+			 var password = document.getElementById("upwd"); 
+			if(password.value.length<8 || password.value.length>20){
+				$("show_uname").innerHTML="请输入8～20字符，需同时包含英文和数字";
+			}
+		}
+		function check_pwd(){
+				var upwd = $("upwd").value;
+				var cpwd = $("cpwd").value;
+				if(upwd == cpwd){
+					$("show_uname").innerHTML="通过";
+				}else{
+					$("show_uname").innerHTML="两次密码输入不一致";
+				}
+			}
+	</script>
+ </body>
+</html>

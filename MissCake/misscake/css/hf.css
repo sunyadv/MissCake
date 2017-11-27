@@ -1,0 +1,384 @@
+body{
+	font-family:'PingFang SC','Heiti SC','微软雅黑',Helvetica,Arial;
+	font-size:12px;
+	color:#684029;
+	overflow-x:hidden;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{
+	margin:0;
+	padding:0;
+}
+fieldset,img{
+	border:0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+	font-weight:normal;
+}
+input,button,textarea,select,optgroup,option{
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+	outline:none;
+}
+button{
+	border:none;
+	cursor:pointer;
+}
+input,button,textarea,select{
+	*font-size:100%;
+}
+textarea{
+	resize:none;
+}
+ol,ul{
+	list-style:none;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+img,a{
+	border:none;
+	margin:0px;
+	padding:0px;
+}
+a:visited,a:link,a{
+	color:#684029;
+	text-decoration:none;
+	outline:none;
+	cursor:pointer;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-tap-highlight-color:transparent;
+}
+a:hover{
+	color:#BB9772;
+}
+a:focus{
+	outline:none;
+}
+input,textarea,select{
+	outline:none;
+}
+input[type="button"],input[type="submit"]{
+	border:none;
+	cursor:pointer;
+}
+
+
+/*头部导航*/
+.header-box{
+	height:80px;
+}
+.header{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:1000000;
+	width:100%;
+	height:80px;
+	background:#FFF;
+	box-shadow:0px 2px 2px 0px rgba(195,195,195,0.50);
+}
+.header-nav{
+	margin:0 auto;
+	max-width:1200px;
+	min-width:760px;
+	height:80px;
+}
+.header .header-logo{
+	display:block;
+	float:left;
+	width:120px;
+	height:80px;
+	margin-top:-15px;
+	overflow:hidden;
+}
+.header .header-logo img{
+	width:100%;
+}
+.header .nav-box{
+	position:relative;
+	float:left;
+	line-height:80px;
+	height:80px;
+	margin-left:30px;
+}
+.header .nav-box li{
+	float:left;
+	margin:0 15px;
+	font-size:14px;
+}
+.header .right-city-user{
+	position:relative;
+	float:right;
+}
+.header .current-city{
+	line-height:80px;
+	float:left;
+	width:84px;
+	text-align:center;
+	cursor:pointer;
+	font-size:14px;
+}
+
+.header .header-select{
+	position:absolute;
+	top:65px;
+	text-align:center;
+	padding:12px 0;
+	background:#fff;
+	border:1px solid #EDEDED;
+	box-shadow:0px 2px 4px 0px #ededed;
+	display:none;
+	z-index:100000;
+}
+.header .current-city-list{
+	right:95px;
+	width:110px;
+	display:none;
+}
+.current-city:hover .current-city-list{
+	display:block;
+}
+.header .header-select li{
+	display:block;
+	color:#D5BFA7;
+	line-height:18px;
+	margin:6px 0
+}
+
+.header .header-select a:hover,.header .header-select a.active{
+	color:#442818;
+}
+.header .header-user,.header .header-cart{
+	float:left;
+	display:block;
+	height:32px;
+	padding-top:27px;
+	padding-bottom:20px;
+}
+.header .header-user{
+	display:none;
+	text-align:center;
+	width:70px;
+}
+.header .not-login{
+	float:left;
+	line-height:80px;
+	font-size:14px;
+	width:195px;
+	text-align:center;
+}
+.header .header-cart{
+	position:relative;
+	padding-right:6px;
+	padding-left:15px;
+}
+/*轮播图*/
+#slider{
+	height: 630px;
+	width: 100%;
+	position: relative;
+	margin-bottom:25px;
+}
+#slider>#list{
+	width: 100%;
+	height:630px;
+	position:relative;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+}
+#slider>#list>img.show{  opacity:1;z-index:10;  }
+#slider>#list>img{
+	opacity:0;
+	transition:all 2s linear;
+	position:absolute; top:0; left:0;
+}
+#slider>ul{
+	position: absolute;
+	bottom: 31.05px;
+	left: 650px;
+	z-index: 15;
+	list-style: none;
+	height: 11px;
+	width: 190px;
+	margin-left: -30px;
+}
+#slider>ul>li{
+	border-radius:50%;
+	float: left;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 1px 0px;
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#slider>ul>li:hover{
+	background:#993333;
+}
+
+/*中间内容*/
+.content-box{
+	width:1200px;
+	margin:0 auto;
+	padding-bottom:50px;
+}
+.content-box .home-module{
+	display:flex;
+	justify-content:space-between;
+}
+.content-box .home-cake,.content-box .home-piece{
+	text-align:center;
+}
+.home-cake-list,.home-piece-list{
+	border-top:2px solid #e0e0e0;
+}
+.home-cake img{
+	margin-top:80px;
+}
+.home-piece img{
+	margin-top:80px;
+}
+.home-cake-list>ul,.home-piece-list>ul{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-around;
+	margin-top:10px;
+}
+.home-piece-list>ul{
+	margin-bottom:30px;
+}
+.home-cake-list>ul>li,.home-piece-list>ul>li{
+	width:250px;
+	height:350px;
+	margin-top:10px;
+}
+.home-cake-list>ul>li img,.home-piece-list>ul>li img{
+	width:200px;
+	height:200px;
+}
+
+
+/*底部*/
+.footer{
+	width:100%;
+	background:#333;
+	padding:50px 0 0 0;
+	position:relative;
+}
+.footer-logo{
+	display:block;
+	margin:0 auto;
+}
+.footer-nav{
+	text-align:center;
+	color:#fff;
+	margin:25px 0;
+}
+.footer-nav a{
+	color:#fff;
+	display:inline-block;
+	margin:0 50px;
+}
+.footer-icon{
+	text-align:center;
+}
+.footer-icon a{
+	display:inline-block;
+	border-radius:25px;
+	height:50px;
+	width:50px;
+	background:#494949;
+	margin:0 25px;
+	font-size:16px;
+	color:#fff;
+	line-height:50px;
+	text-align:center;
+	vertical-align:middle;
+}
+.footer-icon a>img{
+	height:30px;
+	margin:10px;
+}
+.footer-icon .footer-app>img{
+	height:26px;
+	margin:12px;
+}
+.footer-text{
+	color:#9a9a9a;
+	text-align:center;
+	margin-top:25px;
+	line-height:18px;
+	font-size:10px;
+}
+.footer-text span{
+	display:block;
+}
+.footer-text span:first-child{
+	font-weight:bold;
+}
+.footer-copyright{
+	margin:0 auto;
+	border-top:1px solid #616161;
+	margin-top:15px;
+	text-align:center;
+	padding-bottom:15px;
+	font-size:10px;
+	padding-top:12px;
+}
+.footer-copyright span{
+	color:#9a9a9a;
+	line-height:1.5em;
+}
+
+.footer-erweima{
+	position:absolute;
+	display:none;
+	height:120px;
+	width:120px;
+	left:50%;
+	margin-left:42px;
+	top:15px;
+	overflow:hidden;
+
+}
+.footer-weixin:hover .footer-weixin-erweima,.footer-app:hover .footer-app-erweima{
+	display:block;
+	animation:erweima linear 1s;
+}
+.footer-erweima img,.footer-app img{
+	height:100px;
+	width:100px;
+	border:10px solid #fff;
+}
+.footer-weixin-erweima{
+	position:absolute;
+	left:607px;
+	top:40px;
+}
+.footer-app-erweima{
+	position:absolute;
+	left:714px;
+	top:40px;
+}
+@keyframes erweima{
+	0% {
+        opacity:0.1;
+     }
+	100%{
+		opacity:1;
+	}
+}
+@-webkit-keyframes erweima{
+		0% {
+        opacity:0.1;
+     }
+	100%{
+		opacity:1;
+	}
+}

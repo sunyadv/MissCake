@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>MISSCAKE-私人订制!!!_24小时蛋糕网上订购_5小时新鲜送达！</title>
+	<link rel="shortcut icon" href="favicon.ico" >
+    <link rel="stylesheet" type="text/css" href="css/hf.css">  
+	<style>
+/*商品图*/
+		.pro_pic{
+			width:100%;
+			height:500px;
+			position:relative;
+			overflow:hidden
+		}
+		.pro_pic img{
+			position:absolute;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			margin:auto;
+			transition:3s;
+			
+		}
+		.pro_pic img:hover{
+			transform: scale(1.5, 1.5);
+		}
+		.pro_content{
+			width:1200px;
+			height:1000px;
+			margin-left:110px;
+			display:flex;
+			flex-direction:row;
+			flex-wrap:wrap;
+			justify-content:space-between ;
+		}
+		
+/*商品标题*/
+		.pro_title{
+			font-size: 20px;
+			line-height: 40px;
+			margin-top: 50px;
+			margin-left:110px;
+		}
+/*左部-商品介绍*/
+		.pro_content_left{
+			width:600px;
+			height:520px;
+		}
+		.left_explain{
+			height:96px;
+			font-size: 12px;
+			line-height: 2em;
+			min-height: 30px;
+			margin-bottom:15px;
+			margin-left:10px;
+		}
+		.left_meta{
+			height:180px;
+		}
+		.left_mate img{
+			vertical-align:middle;
+			margin-left:10px;
+		}
+		.left_dis{
+			width:600px;
+			height:232px;
+			display:flex;
+			flex-direction:column;
+			flex-wrap:wrap;
+			justify-content:space-around;
+			
+		}
+		.dis_sweet{
+			margin-left:10px;
+		}
+		.myindex{
+			vertical-align:middle;
+		}
+		.dis_sweet span{
+			font-size:15px;
+			position:relative;
+			top:5px;
+		}
+		.pro_order{
+			height:90px;
+			display:flex;
+			flex-direction:row;
+			flex-wrap:wrap;
+			justify-content:space-around;
+		}
+		.pro_price{
+			line-height: 25px;
+			font-size: 22px;
+			font-weight:bold;
+			margin-left:10px;
+			margin-top:30px;
+		}
+		.pro_buy{
+			background: #F4F4F4;
+			color: #7A5844;
+			height: 40px;
+			width: 238px;
+			line-height: 40px;
+			text-align: center;
+			font-size: 13px;
+			margin-top:20px;
+		}
+/*右部-商品图片*/
+		.pro_content_right{
+			width:500px;
+			height:520px;
+			position:relative;
+		}
+		.pro_content_right img{
+			width:100%;
+			height:100%;
+		}
+/*底部-商品图片*/
+		.pro_introduction{
+			height:3000px;
+		}
+		.pro_introduction img{
+			margin-left:110px;
+			position:relative;
+			top:-400px;
+		}
+	</style>
+ </head>
+ <body>
+<!--导航栏-->
+<div class="header-box">
+<div class="header">
+    <div class="header-nav">
+        <a class="header-logo" href="http://101.132.97.61/MissCake/misscake/homepage2.0.html">
+			<img src="img/head.jpg">        
+        </a>
+        <ul class="nav-box">
+				<li><a href="http://101.132.97.61/MissCake/misscake/homepage2.0.html" >首页</a></li>
+                <li><a href="http://101.132.97.61/MissCake/misscake/cake.html" target="_self">蛋糕</a></li>
+                <li><a href="http://101.132.97.61/MissCake/misscake/piece.html" target="_self">小切块</a></li>
+                <li><a href="" target="_self">全国配送</a></li>
+                <li><a href="" target="_self">企业专区</a></li>
+        </ul>
+        <div class="right-city-user">
+
+            <div class="current-city" data-id='current-city'>上海
+						<ul class="current-city-list  header-select" id="current-city">
+                            <li>上海</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                            <li>杭州</li>
+                            <li>无锡</li>
+                            <li>苏州</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                        </ul>
+			</div>
+			
+            <span class="not-login">
+				<a href="denglu.html">登录</a>/<a href="zhuce.html">注册</a>
+			</span>
+            <a href="/member.html" class="header-user" data-id='header-user'>
+			          
+            </a>
+            <a href="#" class="header-cart" id="cart-count-icon">
+				<img src="img/user_img.png">  
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--商品内容-->
+	<div class="pro_pic" id="pro_pic">
+		<img src="img/Mango Cream Cake.jpg" width="1200" height="500">
+	</div>
+	<h1 class="pro_title">Mango Cream Cake芒果奶油蛋糕</h1>
+	<div class="pro_content">
+		<div class="pro_content_left">
+			<div class="left_explain">
+				/不使用罐头水果和植混奶油/<br>
+				/坚持应季凯特鲜切芒果/<br>
+				/新西兰纯乳脂奶油/<br>
+				/配方芒果百香果慕斯夹心/<br>
+			</div>
+			<hr>
+			<div class="left_mate">
+				<img src="img/mate01.png" width="60" height="60" border="0" alt="">
+				<span>芒果</span>
+				<img src="img/mate02.png" width="60" height="60" border="0" alt="">
+				<span>百香果</span>
+			</div>
+			<hr>
+			<ul class="left_dis">
+				<li class="dis_sweet">
+					<img src="img/sweet.png"  class="myindex">
+					<span>参考甜度：</span><br>
+					<img src="img/sweet_03.png" width="272" height="42" style="margin-left:100px;">
+				</li>
+				<li class="dis_sweet">
+					<img src="img/time.png"  class="myindex">
+					<span>配送时间：</span><br>
+					<span style="margin-left:115px;font-size:15px;">现在订购最早今天 20:30配送。每日最晚配送时间21:30</span>
+				</li>
+				<li class="dis_sweet">
+					<img src="img/exist.png"  class="myindex">
+					<span>保鲜条件：</span><br>
+					<span style="margin-left:115px;font-size:15px;">0－4℃保藏12小时，5℃食用为佳</span>
+				</li>
+			</ul>
+			<br>
+			<hr>
+				<div class="pro_order">
+					<div class="pro_price">¥198.00/2.0磅</div>
+					<button href="#" class="pro_buy">立即购买</button>
+				</div>
+		</div>
+		<div class="pro_content_right">
+			<img src="img/commodity01_00.jpg">
+		</div>
+	</div>
+	<div class="pro_introduction">
+		<img src="img/commodity01_01.jpg" width="1200" height="766" border="0" alt="">
+		<img src="img/commodity01_02.jpg" width="1200" height="800" border="0" alt="">
+		<img src="img/commodity01_03.jpg" width="1200" height="977" border="0" alt="">
+		<img src="img/commodity01_04.jpg" width="1200" height="500" border="0" alt="">
+		<img src="img/commodity01_05.jpg" width="1200" height="270" border="0" alt="">
+	</div>
+
+<!--底部-->
+<div class="footer">
+    <img class="footer-logo" src="img/head.jpg"  height="66" width="96" >
+    <div class="footer-nav">
+        <a href="#">联系我们</a>
+        <span>|</span>
+        <a href="#">订购帮助</a>
+        <span>|</span>
+        <a href="#">企业合作</a>
+        <span>|</span>
+        <a href="#">生产经营资质</a>
+        <span>|</span>
+        <a href="#">公告专区</a>
+    </div>
+    <div class="footer-icon">
+        <a href="http://weibo.com/5711471027" target="_blank">
+            <img src="img/footericon-01.png">
+        </a>
+        <a class="footer-weixin">
+            <div class="footer-erweima footer-weixin-erweima">
+                <img src="img/erweima.jpg">
+            </div>
+            <img src="img/footericon-02.png">
+        </a>
+        <a class="footer-app">
+            <div class="footer-erweima footer-app-erweima">
+                <img src="img/erweima.jpg">
+            </div>
+            APP
+        </a>
+    </div>
+    
+    <div class="footer-text">
+        <span>订购专线：400 *** ****（服务时间 08:00–22:00）</span>
+        <span>客服电话：***-********（全国） | 976575821@qq.com（邮箱）</span>
+        <span>杭州/广州：提前5小时预订；北京/上海：提前6-8小时预订；天津/苏州/无锡/深圳：提前8小时预订（当日22点以后订单，于次日8点开始审核） </span>
+        <span>当日蛋糕配送截止下单时间：北京：16:30；上海：16:30；杭州/广州：13:50；天津：10:30；苏州/无锡/深圳：11:00</span>
+        <span>网站注册公司名称: 南京*******有限公司 地址: 南京市玄武区苏苑大厦达内科技 </span>
+    </div>
+    <div class="footer-copyright">
+        <span>Copyright© MissCake蛋糕官网 2007-2017, 版权所有 京ICP备********号-1</span>
+    </div>
+	</div>
+ </body>
+</html>
