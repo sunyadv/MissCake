@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="clickBox.css">
+</head>
+<body>
+<div class="box">
+    <div id="cont">
+        <div id="start">
+            <span>Game start</span>
+        </div>
+        <div id="main"></div>
+    </div>
+    <div id="count"></div>
+</div>
+
+<script>
+    var main = document.getElementById("main");
+    var go = document.getElementById("start");
+    var count = document.getElementById("count");
+    var cols = ["#1AAB8A","#E15650","#121B39","#80A84E"];
+
+
+    //动态创建div
+    function createDiv(cn){
+        //创建一个大div包裹4个小div
+        var Div = document.createElement("div");
+        //获取0-4随机数
+        var index = Math.floor(Math.random()*4);
+
+        //创建4个小div
+        Div.className = cn;
+        for(var i= 0;i<4;i++){
+            var iDiv = document.createElement('div');
+            Div.appendChild(iDiv);
+        }
+        //判断是否创建大div
+        if(main.children.length == 0){
+            main.appendChild(Div);
+        }else {
+            main.insertBefore(Div, main.children[0]);
+        }
+        //随机赋颜色值
+        Div.children[index].style.backgroundColor = cols[index];
+        Div.children[index].className = "i";
+    }
+    function getStyle(obj,arrt){
+        return obj.currentStyle ? obj.currentStyle[arrt] : getComputedStyle(obj,null)[arrt];
+    }
+    //移动div
+    function move(obj){
+        clearInterval(obj.timer);
+        var speed = 5,num = 0;
+        obj.timer = setInterval(function(){
+            var step = parseInt(getStyle(obj,"top")) + speed;
+            obj.style.top = step + "px";
+            if(parseInt(getStyle(obj,"top"))>=0){
+                createDiv("row");
+                obj.style.top = -150 + "px";
+            }
+            if(obj.children.length == 6) {
+                for (var i = 0; i < 4; i++) {
+                    if (obj.children[obj.children.length - 1].children[i].className == 'i') {
+                        obj.style.top = '-150px';
+                        count.innerHTML = '游戏结束,最高得分: ' + num;
+                        clearInterval(obj.timer);
+                        go.children[0].innerHTML = 'Renew game';
+                        go.style.display = "block";
+                    }
+                }
+                obj.removeChild(obj.children[obj.children.length - 1]);
+            }
+            obj.onmousedown = function(event){
+                if((event.target? event.target : event.srcElement).className== 'i'){
+                    (event.target? event.target : event.srcElement).style.backgroundColor = "#bbb";
+                    (event.target? event.target : event.srcElement).className= '';
+                    num++;
+                    count.innerHTML = '当前得分: ' + num;
+                }
+                else{
+                    obj.style.top = 0;
+                    count.innerHTML = '游戏结束,最高得分: ' + num;
+                    clearInterval(obj.timer);
+                    go.children[0].innerHTML = 'Renew game';
+                    go.style.display = "block";
+                }
+                //盒子加速
+                if(num%10 == 0){
+                    speed++;
+                }
+            }
+            //松开触发停止
+            obj.onmouseup=function(event){
+            }
+        },20);
+    }
+    go.children[0].onclick = function(){
+        //开始前判断main里面是否有盒子，有则全部删除
+        if(main.children.length){
+            //暴力清楚main里面所有盒子
+            main.innerHTML = '';
+        }
+        //清空计分
+        count.innerHTML = '游戏开始';
+        //隐藏开始盒子
+        this.parentNode.style.display = "none";
+        //调用定时器
+        move(main);
+    }
+</script>
+</body>
+</html>
