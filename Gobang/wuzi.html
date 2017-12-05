@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin: 10px;
+            background:top right url("bg.jpg") no-repeat;
+            background-size:100% 100%;
+            background-attachment: fixed
+        }
+        canvas{
+            background: #ddd;
+            opacity: 0.75;
+        }
+        #d1{
+            margin-top: -490px;
+            margin-left: 750px;
+
+        }
+        #d2{
+            font-size:30px;
+            font-weight: bold;
+        }
+        .m{
+            margin-left:15px;
+            margin-top: 30px;
+        }
+        #d1>span{
+            position: relative;
+            top:13px;
+            left:-49px;
+        }
+    </style>
+
+</head>
+<body onload="drawRect()">
+
+<div>
+    <canvas width="640" id="canvas" onmousedown="play(event)" height="640">
+        你的浏览器不支持HTML5 canvas.
+    </canvas>
+    <div id="d1">
+        <div id="d2">五子棋</div>
+        <br>
+        <img src="b.png" height="60" width="60" class="m"/>
+        <span>黑棋</span>
+        <br>
+        <img src="w.png" height="60" width="60" class="m"/>
+        <span>白棋</span>
+    </div>
+</div>
+<script>
+    var canvas;
+    var context;
+    var isWhite = true;
+    var img_b = new Image();
+    img_b.src = "b.png";
+    var img_w = new Image();
+    img_w.src = "w.png";
+
+    //棋盘信息，0为没有走过的，1为白棋走的，2为黑棋走的
+    var chessData = new Array(15);
+    for (var x = 0; x < 15; x++) {
+        chessData[x] = new Array(15);
+        for (var y = 0; y < 15; y++) {
+            chessData[x][y] = 0;
+        }
+    }
+
+    //初始化棋盘，绘制棋盘的线
+    function drawRect() {
+        canvas = document.getElementById("canvas");
+        context = canvas.getContext("2d");
+
+        for (var i = 0; i <= 640; i += 40) {
+            context.beginPath();
+            context.moveTo(0, i);
+            context.lineTo(640, i);
+            context.closePath();
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(i, 0);
+            context.lineTo(i, 640);
+            context.closePath();
+            context.stroke();
+        }
+    }
+
+    //鼠标点击时获取位置
+    function play(e) {
+        var x = parseInt((e.clientX - 20) / 40);
+        var y = parseInt((e.clientY - 20) / 40);
+
+        if (chessData[x][y] != 0) {
+            alert("你不能在这个位置下棋");
+            return;
+        }
+
+        if (isWhite) {
+            isWhite = false;
+            drawChess(1, x, y);
+        }
+        else {
+            isWhite = true;
+            drawChess(2, x, y);
+        }
+
+    }
+
+    //绘制棋子
+    function drawChess(chess, x, y) {
+        if (x >= 0 && x < 15 && y >= 0 && y < 15) {
+            if (chess == 1) {
+                context.drawImage(img_w, x * 40 + 20, y * 40 + 20);
+                chessData[x][y] = 1;
+            }
+            else {
+                context.drawImage(img_b, x * 40 + 20, y * 40 + 20);
+                chessData[x][y] = 2;
+            }
+            judge(x, y, chess);
+        }
+    }
+
+    //判断该局棋盘是否赢了
+    function judge(x, y, chess) {
+        var count1 = 0;
+        var count2 = 0;
+        var count3 = 0;
+        var count4 = 0;
+
+        //左右判断
+        for (var i = x; i >= 0; i--) {
+            if (chessData[i][y] != chess) {
+                break;
+            }
+            count1++;
+        }
+        for (var i = x + 1; i < 15; i++) {
+            if (chessData[i][y] != chess) {
+                break;
+            }
+            count1++;
+        }
+
+        //上下判断
+        for (var i = y; i >= 0; i--) {
+            if (chessData[x][i] != chess) {
+                break;
+            }
+            count2++;
+        }
+        for (var i = y + 1; i < 15; i++) {
+            if (chessData[x][i] != chess) {
+                break;
+            }
+            count2++;
+        }
+
+        //左上右下判断
+        for (var i = x, j = y; i >= 0, j >= 0; i--, j--) {
+            if (chessData[i][j] != chess) {
+                break;
+            }
+            count3++;
+        }
+        for (var i = x + 1, j = y + 1; i < 15, j < 15; i++, j++) {
+            if (chessData[i][j] != chess) {
+                break;
+            }
+            count3++;
+        }
+        //右上左下判断
+        for (var i = x, j = y; i >= 0, j < 15; i--, j++) {
+            if (chessData[i][j] != chess) {
+                break;
+            }
+            count4++;
+        }
+        for (var i = x + 1, j = y - 1; i < 15, j >= 0; i++, j--) {
+            if (chessData[i][j] != chess) {
+                break;
+            }
+            count4++;
+        }
+
+        if (count1 >= 5 || count2 >= 5 || count3 >= 5 || count4 >= 5) {
+            if (chess == 1) {
+                alert("白棋赢了");
+            }
+            else {
+                alert("黑棋赢了");
+            }
+        }
+    }
+</script>
+</body>
+</html>
